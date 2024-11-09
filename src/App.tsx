@@ -1,14 +1,10 @@
-import { Button } from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
+import { AppRouter } from "./router/AppRouter";
 
-
-
-export const  App =()=> {
-
+export const App = () => {
   return (
-    <div className="bg-slate-800">
-      <Button  className=" m-20 bg-amber-300" >click</Button>/
-     
-    </div>
+    <NextUIProvider>
+      <AppRouter />;
+    </NextUIProvider>
   );
-}
-
+};
