@@ -1,5 +1,5 @@
-import axios from "axios";
-import { getWeatherData } from "../weatherSlice";
+import axios, { AxiosError } from "axios";
+import { getError, getWeatherData } from "../weatherSlice";
 import { useAppDispatch } from "./useFuntionStore";
 
 const baseUrl = import.meta.env.VITE_BASEURL;
@@ -28,8 +28,14 @@ export const useWeather = () => {
 
       dispatch(getWeatherData(info));
     } catch (error) {
-      console.log(error);
+      if (error instanceof AxiosError) {
+        const message = error.response?.data.error.message;
+        dispatch(getError(message));
+      } else {
+        dispatch(getError("Error desconocido"));
+      }
     }
+    return;
   };
 
   return {

@@ -28,8 +28,14 @@ export const weatherSlice = createSlice({
   reducers: {
     getWeatherData: (state, { payload }: PayloadAction<WeatherProps>) => {
       state.data = payload;
+      if (state.errorMessage !== "") {
+        state.errorMessage = "";
+      }
+    },
+    getError: (state, { payload }: PayloadAction<string>) => {
+      state.errorMessage = payload;
     },
   },
 });
 
-export const { getWeatherData } = weatherSlice.actions;
+export const { getWeatherData, getError } = weatherSlice.actions;

@@ -10,6 +10,7 @@ interface DaylyWeatherProp {
   day: string;
   urlIcon: string;
   condition: string;
+  errorMessage: string;
 }
 export const SideBar = ({
   country,
@@ -18,8 +19,10 @@ export const SideBar = ({
   day,
   urlIcon,
   condition,
+  errorMessage,
 }: DaylyWeatherProp) => {
   const { startSavigData } = useWeather();
+
   const [getCountry, setCountry] = useState("Miami");
   const onHandleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -42,6 +45,15 @@ export const SideBar = ({
           className="p-5"
         />
       </form>
+      <>
+        {
+          <h1>
+            {" "}
+            {errorMessage !== "Parameter q is missing." ? errorMessage : ""}
+          </h1>
+        }
+      </>
+
       <h3 className="text-3xl p-2"> {country}</h3>
       <h3 className="text-2xl p-2"> {region}</h3>
       <h3 className="text-2xl p-2"> {temp}°C</h3>
