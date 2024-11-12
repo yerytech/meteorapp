@@ -34,7 +34,7 @@ export const SideBar = ({
     startSavigData(getCountry);
   }, [getCountry, startSavigData]);
   return (
-    <div className=" flex flex-col max-w-xs h-screen bg-slate-300  items-center justify-items-center rounded-2xl  content-center ">
+    <div className=" flex flex-col max-w-xs  bg-slate-300  items-center justify-items-center rounded-2xl  content-center ">
       <form onSubmit={onHandleSubmit}>
         <Input
           type="text"
