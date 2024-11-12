@@ -16,6 +16,7 @@ export const useWeather = () => {
           q: query,
         },
       });
+      // console.log(response);
 
       const { location, current } = response.data;
       const info = {
@@ -25,6 +26,11 @@ export const useWeather = () => {
         day: location.localtime,
         urlIcon: current.condition.icon,
         condition: current.condition.text,
+        uv: current.uv,
+        humidity: current.humidity,
+        windStatus: current.wind_kph,
+        visibility: current.vis_km,
+        lastUpdated: current.last_updated,
       };
 
       dispatch(getWeatherData(info));

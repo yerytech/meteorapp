@@ -7,6 +7,11 @@ interface WeatherProps {
   day: string;
   urlIcon: string;
   condition: string;
+  uv: string;
+  humidity: string;
+  windStatus: string;
+  visibility: string;
+  lastUpdated: string;
 }
 
 const weatherDate: WeatherProps = {
@@ -16,6 +21,11 @@ const weatherDate: WeatherProps = {
   day: "",
   urlIcon: "",
   condition: "",
+  uv: "",
+  humidity: "",
+  windStatus: "",
+  visibility: "",
+  lastUpdated: "",
 };
 const initialState = {
   errorMessage: "",

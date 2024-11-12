@@ -11,6 +11,7 @@ interface DaylyWeatherProp {
   urlIcon: string;
   condition: string;
   errorMessage: string;
+  lastUpdated: string;
 }
 export const SideBar = ({
   country,
@@ -20,6 +21,7 @@ export const SideBar = ({
   urlIcon,
   condition,
   errorMessage,
+  lastUpdated,
 }: DaylyWeatherProp) => {
   const { startSavigData } = useWeather();
 
@@ -52,14 +54,22 @@ export const SideBar = ({
         </h1>
       }
 
-      <h3 className="text-3xl p-2 text-ellipsis m-2 items-center justify-center">
+      <h3 className=" text-center  text-3xl p-2 text-ellipsis m-2 items-center justify-center">
         {country}
       </h3>
-      <h3 className="text-2xl p-2"> {region}</h3>
+      <h3 className=" text-2xl p-2"> {region}</h3>
       <h3 className="text-2xl p-2"> {temp}°C</h3>
       <h3 className="text-2xl p-2"> {day}</h3>
-      <h3 className="text-2xl p-2"> {condition}</h3>
-      <Image src={urlIcon}></Image>
+      <h3 className="text-2xl  p-2"> {condition}</h3>
+
+      <Image
+        className="m-5"
+        src={urlIcon}
+      ></Image>
+      <div className="m-10">
+        <h2>Last Updated</h2>
+        <h3>{lastUpdated}</h3>
+      </div>
     </div>
   );
 };

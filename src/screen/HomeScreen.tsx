@@ -1,6 +1,6 @@
 import { SideBar } from "../shared/components/SideBar";
+import { WeatherInfo } from "../shared/components/WeatherInfo";
 import { useAppSelector } from "../shared/store/hooks/useFuntionStore";
-import { CardHighlights } from "../shared/components/CardHighlights";
 
 export const HomeScreen = () => {
   const { data, errorMessage } = useAppSelector((state) => state.weather);
@@ -15,12 +15,9 @@ export const HomeScreen = () => {
         day={data.day}
         urlIcon={data.urlIcon}
         condition={data.condition}
+        lastUpdated={data.lastUpdated}
       />
-      <CardHighlights
-        title={""}
-        data={""}
-        info={""}
-      />
+      <WeatherInfo />
     </div>
   );
 };
