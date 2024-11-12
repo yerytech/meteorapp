@@ -8,6 +8,10 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screen: {
+      md: "768px",
+    },
+
     extend: {
       colors: {
         primary: "#2563EB", // Azul

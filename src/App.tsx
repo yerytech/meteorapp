@@ -4,7 +4,7 @@ import { AppRouter } from "./router/AppRouter";
 export const App = () => {
   return (
     <NextUIProvider>
-      <AppRouter />;
+      <AppRouter />
     </NextUIProvider>
   );
 };

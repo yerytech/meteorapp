@@ -5,12 +5,12 @@ import { ImgUv } from "./ImgUv";
 import { ImgVisibility } from "./ImgVisibility";
 import { ImgWind } from "./ImgWind";
 
-export const WeatherInfo = () => {
+export const WeatherInfo = ({ className }: { className: string }) => {
   const { data } = useAppSelector((state) => state.weather);
   return (
-    <div className="ml-10 font-medium">
+    <div className={`${className}ml-10 font-medium`}>
       <h1 className=" ml-2 m-4 text-2xl">Today's Highlights</h1>
-      <div className="flex flex-grow-0">
+      <div className="flex flex-wrap">
         <CardHighlights
           title={"UV index"}
           data={data.uv}

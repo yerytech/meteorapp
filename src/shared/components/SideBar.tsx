@@ -30,18 +30,31 @@ export const SideBar = ({
     e.preventDefault();
   };
 
+  const handleDelete = () => {
+    if (getCountry.length === 0) return;
+    setCountry(getCountry.substring(0, getCountry.length - 1));
+  };
+
   useEffect(() => {
     startSavigData(getCountry);
   }, [getCountry, startSavigData]);
   return (
-    <div className=" flex flex-col max-w-xs  bg-slate-300  items-center justify-items-center rounded-2xl  content-center ">
+    <div className=" flex flex-col   bg-slate-300 w-screen  md:w-[400px] items-center justify-items-center rounded-2xl content-center ">
       <form onSubmit={onHandleSubmit}>
         <Input
+          value={getCountry}
           type="text"
           onChange={({ target }) => {
             setCountry(target.value);
           }}
-          endContent={<FiDelete />}
+          endContent={
+            <button
+              type="button"
+              onClick={handleDelete}
+            >
+              <FiDelete />
+            </button>
+          }
           startContent={<GoSearch />}
           variant="bordered"
           className="p-5"
@@ -63,12 +76,12 @@ export const SideBar = ({
       <h3 className="text-2xl  p-2"> {condition}</h3>
 
       <Image
-        className="m-5"
+        className="m-2"
         src={urlIcon}
       ></Image>
-      <div className="m-10">
-        <h2>Last Updated</h2>
-        <h3>{lastUpdated}</h3>
+      <div className="">
+        <h2 className="text-sm sm:text-xl mb-1">Last Updated</h2>
+        <h3 className="text-sm sm:text-xl">{lastUpdated}</h3>
       </div>
     </div>
   );

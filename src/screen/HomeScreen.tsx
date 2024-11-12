@@ -17,7 +17,7 @@ export const HomeScreen = () => {
         condition={data.condition}
         lastUpdated={data.lastUpdated}
       />
-      <WeatherInfo />
+      <WeatherInfo className=" hidden sm:block " />
     </div>
   );
-};
+}
