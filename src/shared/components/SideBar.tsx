@@ -30,9 +30,9 @@ export const SideBar = ({
 
   useEffect(() => {
     startSavigData(getCountry);
-  }, [getCountry]);
+  }, [getCountry, startSavigData]);
   return (
-    <div className=" flex flex-col max-w-xs h-screen bg-slate-300  items-center justify-items-center  rounded-2xl">
+    <div className=" flex flex-col max-w-xs h-screen bg-slate-300  items-center justify-items-center rounded-2xl  content-center ">
       <form onSubmit={onHandleSubmit}>
         <Input
           type="text"
@@ -45,16 +45,16 @@ export const SideBar = ({
           className="p-5"
         />
       </form>
-      <>
-        {
-          <h1>
-            {" "}
-            {errorMessage !== "Parameter q is missing." ? errorMessage : ""}
-          </h1>
-        }
-      </>
 
-      <h3 className="text-3xl p-2"> {country}</h3>
+      {
+        <h1>
+          {errorMessage !== "Parameter q is missing." ? errorMessage : ""}
+        </h1>
+      }
+
+      <h3 className="text-3xl p-2 text-ellipsis m-2 items-center justify-center">
+        {country}
+      </h3>
       <h3 className="text-2xl p-2"> {region}</h3>
       <h3 className="text-2xl p-2"> {temp}°C</h3>
       <h3 className="text-2xl p-2"> {day}</h3>

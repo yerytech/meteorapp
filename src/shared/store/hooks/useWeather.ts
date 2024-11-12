@@ -16,6 +16,7 @@ export const useWeather = () => {
           q: query,
         },
       });
+
       const { location, current } = response.data;
       const info = {
         country: location.country,
