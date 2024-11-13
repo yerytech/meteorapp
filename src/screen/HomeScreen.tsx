@@ -6,18 +6,17 @@ export const HomeScreen = () => {
   const { data, errorMessage } = useAppSelector((state) => state.weather);
 
   return (
-    <div className="h-screen w-full bg-gray-200 flex flex-row">
+    <div className="h-screen w-full  bg-gray-200 flex flex-row">
       <SideBar
         errorMessage={errorMessage}
         country={data.country}
         region={data.region}
         temp={data.temp.toString()}
-        day={data.day}
         urlIcon={data.urlIcon}
         condition={data.condition}
         lastUpdated={data.lastUpdated}
       />
-      <WeatherInfo className=" hidden sm:block " />
+      <WeatherInfo className=" hidden sm:block  " />
     </div>
   );
 }

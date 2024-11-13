@@ -9,7 +9,9 @@ export const WeatherInfo = ({ className }: { className: string }) => {
   const { data } = useAppSelector((state) => state.weather);
   return (
     <div className={`${className}ml-10 font-medium`}>
-      <h1 className=" ml-2 m-4 text-2xl">Today's Highlights</h1>
+      <h1 className=" ml-2 m-4 sm:text-medium  md:text-2xl">
+        Today's Highlights
+      </h1>
       <div className="flex flex-wrap">
         <CardHighlights
           title={"UV index"}

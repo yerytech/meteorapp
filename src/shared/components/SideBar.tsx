@@ -7,7 +7,7 @@ interface DaylyWeatherProp {
   country: string;
   region: string;
   temp: string;
-  day: string;
+
   urlIcon: string;
   condition: string;
   errorMessage: string;
@@ -17,7 +17,7 @@ export const SideBar = ({
   country,
   region,
   temp,
-  day,
+
   urlIcon,
   condition,
   errorMessage,
@@ -57,7 +57,7 @@ export const SideBar = ({
           }
           startContent={<GoSearch />}
           variant="bordered"
-          className="p-5"
+          className="mb-2 mt-2"
         />
       </form>
 
@@ -67,21 +67,21 @@ export const SideBar = ({
         </h1>
       }
 
-      <h3 className=" text-center  text-3xl p-2 text-ellipsis m-2 items-center justify-center">
+      <h3 className=" sm:text-xl  md:text-xl  text-center  text-3xl  text-ellipsis m-1 items-center justify-center">
         {country}
       </h3>
-      <h3 className=" text-2xl p-2"> {region}</h3>
-      <h3 className="text-2xl p-2"> {temp}°C</h3>
-      <h3 className="text-2xl p-2"> {day}</h3>
-      <h3 className="text-2xl  p-2"> {condition}</h3>
+      <h3 className=" sm:text-xl md:text-sm  text-2xl p-1">{region}</h3>
+      <h3 className=" sm:text-xl md:text-xl text-2xl p-1">{temp}°C</h3>
+
+      <h3 className=" sm:text-sm md:text-sm  text-2xl  p-1">{condition}</h3>
 
       <Image
-        className="m-2"
+        className="m-1"
         src={urlIcon}
       ></Image>
       <div className="">
-        <h2 className="text-sm sm:text-xl mb-1">Last Updated</h2>
-        <h3 className="text-sm sm:text-xl">{lastUpdated}</h3>
+        <h2 className="  sm:text-sm md:text-medium   mb-1">Last Updated</h2>
+        <h3 className="md:text-medium sm:text-sm  ">{lastUpdated}</h3>
       </div>
     </div>
   );
