@@ -1,4 +1,5 @@
-import { HomeScreen } from "../screen/HomeScreen";
+import { HomePage } from "../page/HomePage";
+
 export const AppRouter = () => {
-  return <HomeScreen />;
+  return <HomePage />;
 };

@@ -2,7 +2,7 @@ import { SideBar } from "../shared/components/SideBar";
 import { WeatherInfo } from "../shared/components/WeatherInfo";
 import { useAppSelector } from "../shared/store/hooks/useFuntionStore";
 
-export const HomeScreen = () => {
+export const HomePage = () => {
   const { data, errorMessage } = useAppSelector((state) => state.weather);
 
   return (
@@ -19,4 +19,4 @@ export const HomeScreen = () => {
       <WeatherInfo className=" hidden sm:block  " />
     </div>
   );
-}
+};

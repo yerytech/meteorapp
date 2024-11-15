@@ -14,7 +14,8 @@ interface WeatherProps {
   lastUpdated: string;
 }
 
-const weatherDate: WeatherProps = {
+
+const weatherData: WeatherProps = {
   country: "",
   region: "",
   temp: "",
@@ -27,9 +28,24 @@ const weatherDate: WeatherProps = {
   visibility: "",
   lastUpdated: "",
 };
+interface WeatherWeeklyProps {
+  day: string;
+  urlIcon: string;
+  temp: number;
+}
+
+const weatherweeklyData: WeatherWeeklyProps[] = [
+  {
+    day: "",
+    urlIcon: "",
+    temp: 0,
+  },
+];
+
 const initialState = {
   errorMessage: "",
-  data: weatherDate,
+  data: weatherData,
+  weeklyData: weatherweeklyData,
 };
 
 export const weatherSlice = createSlice({
@@ -45,7 +61,14 @@ export const weatherSlice = createSlice({
     getError: (state, { payload }: PayloadAction<string>) => {
       state.errorMessage = payload;
     },
+    getWeatherDataDays: (
+      state,
+      { payload }: PayloadAction<WeatherWeeklyProps[]>
+    ) => {
+      state.weeklyData = payload;
+    },
   },
 });
 
-export const { getWeatherData, getError } = weatherSlice.actions;
+export const { getWeatherData, getError, getWeatherDataDays } =
+  weatherSlice.actions;

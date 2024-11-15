@@ -22,7 +22,7 @@ export const CustomCard = ({
     <div
       className={`${className} m-2 bg-white   rounded-2xl shadow-lg items-center justify-center`}
     >
-      <h1 className=" sm:text-sm m-4  md:text-medium  text-gray-400">
+      <h1 className={` sm:text-sm m-2 pl-2 pt-1 md:text-medium  text-gray-400`}>
         {title}
       </h1>
       <div className=" sm:text-sm  md:text-xl flex flex-row items-center justify-center">

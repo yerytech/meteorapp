@@ -1,9 +1,24 @@
 import axios, { AxiosError } from "axios";
-import { getError, getWeatherData } from "../weatherSlice";
+import { getError, getWeatherData, getWeatherDataDays } from "../weatherSlice";
 import { useAppDispatch } from "./useFuntionStore";
 
 const baseUrl = import.meta.env.VITE_BASEURL;
 const apiKey = import.meta.env.VITE_API_KEY;
+type ForecastDay = {
+  day: string;
+  urlIcon: string;
+  temp: number;
+};
+
+type ForecastDayRaw = {
+  date: string;
+  day: {
+    condition: {
+      icon: string;
+    };
+    maxtemp_c: number;
+  };
+};
 
 export const useWeather = () => {
   const dispatch = useAppDispatch();
@@ -13,13 +28,14 @@ export const useWeather = () => {
       const response = await axios.get(baseUrl, {
         params: {
           key: apiKey,
-          q: query,
+          q: `${query}`,
+          days: 7,
         },
       });
-      // console.log(response);
 
-      const { location, current } = response.data;
-      const info = {
+      const { location, current, forecast } = response.data;
+
+      const curerentInfo = {
         country: location.country,
         region: location.region,
         temp: current.temp_c,
@@ -33,7 +49,16 @@ export const useWeather = () => {
         lastUpdated: current.last_updated,
       };
 
-      dispatch(getWeatherData(info));
+      const dataWeekly: ForecastDay[] = forecast.forecastday.map(
+        (day: ForecastDayRaw) => ({
+          day: day.date,
+          urlIcon: day.day.condition.icon,
+          temp: day.day.maxtemp_c,
+        })
+      );
+
+      dispatch(getWeatherDataDays(dataWeekly));
+      dispatch(getWeatherData(curerentInfo));
     } catch (error) {
       if (error instanceof AxiosError) {
         const message = error.response?.data.error.message;
