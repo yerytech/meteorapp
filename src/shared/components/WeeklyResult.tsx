@@ -16,7 +16,7 @@ export const WeeklyResult = () => {
           "Viernes",
           "Sábado",
         ];
-        const diaDeLaSemana = dias[fecha.getDay()];
+        const diaDeLaSemana = dias[fecha.getUTCDay()];
         console.log(diaDeLaSemana);
 
         return (
