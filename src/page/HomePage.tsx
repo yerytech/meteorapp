@@ -6,7 +6,7 @@ export const HomePage = () => {
   const { data, errorMessage } = useAppSelector((state) => state.weather);
 
   return (
-    <div className="h-screen  w-full bg-cieloClaro bg-cover bg-no-repeat bg-center bg-fixed flex flex-row">
+    <div className="h-screen w-full bg-cieloClaro bg-cover bg-no-repeat bg-center bg-fixed flex flex-row">
       <div className="backdrop-blur-none h-screen bg-background/40 w-full flex flex-row">
         <SideBar
           errorMessage={errorMessage}
