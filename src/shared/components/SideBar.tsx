@@ -40,7 +40,7 @@ export const SideBar = ({
     startSavigData(getCountry);
   }, [getCountry]);
   return (
-    <div className=" flex flex-col   bg-white w-screen  md:w-[400px] items-center justify-items-center rounded-2xl content-center ">
+    <div className=" flex flex-col   bg-slate-400 w-screen  md:w-[400px] items-center justify-items-center rounded-2xl content-center ">
       <form onSubmit={onHandleSubmit}>
         <Input
           value={getCountry}
@@ -84,6 +84,7 @@ export const SideBar = ({
         <h2 className="  sm:text-sm md:text-medium   mb-1">Last Updated</h2>
         <h3 className="md:text-medium sm:text-sm  ">{lastUpdated}</h3>
       </div>
+
       <TodayHighlights className=" block  mt-10    sm:hidden" />
     </div>
   );

@@ -1,5 +1,7 @@
 import { useAppSelector } from "../store/hooks/useFuntionStore";
 import { CustomCard } from "./CustomCard";
+
+
 export const WeeklyResult = () => {
   const { weeklyData } = useAppSelector((state) => state.weather);
   const style = "  sm:w-[100px] sm:h-[100px]  md:w-[100px] md:h-[150px]";
