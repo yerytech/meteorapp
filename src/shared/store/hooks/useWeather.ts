@@ -13,10 +13,11 @@ type ForecastDay = {
 type ForecastDayRaw = {
   date: string;
   day: {
+    maxtemp_c: number;
+
     condition: {
       icon: string;
     };
-    maxtemp_c: number;
   };
 };
 
