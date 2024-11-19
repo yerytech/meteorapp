@@ -3,6 +3,7 @@ import { FiDelete } from "react-icons/fi";
 import { GoSearch } from "react-icons/go";
 import { useWeather } from "../store/hooks/useWeather";
 import { useEffect, useState } from "react";
+import { TodayHighlights } from "./TodayHighlights";
 interface DaylyWeatherProp {
   country: string;
   region: string;
@@ -83,6 +84,7 @@ export const SideBar = ({
         <h2 className="  sm:text-sm md:text-medium   mb-1">Last Updated</h2>
         <h3 className="md:text-medium sm:text-sm  ">{lastUpdated}</h3>
       </div>
+      <TodayHighlights className=" block  mt-10    sm:hidden" />
     </div>
   );
 };

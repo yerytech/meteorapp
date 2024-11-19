@@ -5,13 +5,16 @@ import { ImgHumidity } from "./ImgHumidity";
 import { ImgUv } from "./ImgUv";
 import { ImgVisibility } from "./ImgVisibility";
 import { ImgWind } from "./ImgWind";
+interface TodayProps {
+  className?: string;
+}
 
-export const TodayHighlights = () => {
+export const TodayHighlights = ({ className }: TodayProps) => {
   const { data } = useAppSelector((state) => state.weather);
   const style = "sm:w-[150px] sm:h-[100px]  md:w-[250px] md:h-[130px]";
   return (
-    <>
-      <h1 className=" ml-2 m-4 sm:text-medium  md:text-2xl">
+    <div className={className}>
+      <h1 className=" text-center ml-2 m-4 sm:text-medium  md:text-2xl">
         Today's Highlights
       </h1>
       <div className="flex flex-wrap">
@@ -44,6 +47,6 @@ export const TodayHighlights = () => {
           children={<ImgWind />}
         />
       </div>
-    </>
+    </div>
   );
 };
