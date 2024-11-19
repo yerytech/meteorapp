@@ -14,8 +14,7 @@ export const WeeklyResult = () => {
         sm:text-medium
         md:text-2xl"
       >
-        {" "}
-        WeeklyResult
+        Weekly Result
       </h1>
 
       <div className=" flex flex-wrap">
