@@ -33,9 +33,7 @@ export const CustomCard = ({
         ></Image>
         <h3 className=" sm:text-sm text-xl  text-gray-400">{tipe}</h3>
       </div>
-      <div className=" sm:w-5  pl-2 w-5 items-center justify-end">
-        {children}
-      </div>
+      <div className="   sm:w-10  pl-2 m-2 w-10 items-center">{children}</div>
     </div>
   );
 };
