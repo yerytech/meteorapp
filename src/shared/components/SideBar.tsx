@@ -53,12 +53,12 @@ export const SideBar = ({
               type="button"
               onClick={handleDelete}
             >
-              <FiDelete />
+              <FiDelete size={30} />
             </button>
           }
           startContent={<GoSearch />}
           variant="bordered"
-          className="mb-2 mt-2 p-4"
+          className="mb-2 mt-2 p-6 text-2xl w-full"
         />
       </form>
 
