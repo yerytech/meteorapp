@@ -11,20 +11,23 @@ export default {
     screen: {
       md: "768px",
     },
-
+    backgroundImage: {
+      // Fondos personalizados
+      cieloClaro:
+        "url('https://static.vecteezy.com/system/resources/previews/028/663/748/non_2x/ai-ai-generatedrealistic-4k-sky-with-serene-cumulus-clouds-nature-s-atmospheric-beauty-in-stunning-detail-ideal-for-calming-and-scenic-concepts-free-photo.jpeg')",
+      cieloNublado: "url('https://source.unsplash.com/1600x900/?clouds')",
+    },
     extend: {
       colors: {
-        primary: "#2563EB", // Azul
-        secondary: "#000000", // Amarillo
-        success: "#22C55E", // Verde
-        warning: "#F59E0B", // Amarillo para advertencias
-        error: "#EF4444",
-        black: "#000000",
-
+        fondo: "#FFE8D5", // Fondo principal
+        tarjeta: "#FFF4F3", // Fondo de tarjetas
+        borde: "#FFFFFF", // Borde de tarjetas
+        texto: "#4A403A", // Texto principal
+        // Color para las nubes
         //Ligth Mode
         light: {
           background: "#F3F4F6", // Fondo claro
-          card: "#FFFFFF", // Fondo de tarjetas
+          card: "#D9F0FF", // Fondo de tarjetas
           text: "#1F2937", // Texto oscuro
         },
 

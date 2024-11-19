@@ -40,7 +40,7 @@ export const SideBar = ({
     startSavigData(getCountry);
   }, [getCountry]);
   return (
-    <div className=" flex flex-col   bg-slate-400 w-screen  md:w-[400px] items-center justify-items-center sm:rounded-br-2xl sm:rounded-tr-2xl content-center ">
+    <div className=" flex flex-col bg-background/40  w-screen  md:w-[400px] items-center justify-items-center sm:rounded-br-2xl sm:rounded-tr-2xl content-center ">
       <form onSubmit={onHandleSubmit}>
         <Input
           value={getCountry}
@@ -58,7 +58,7 @@ export const SideBar = ({
           }
           startContent={<GoSearch />}
           variant="bordered"
-          className="mb-2 mt-2"
+          className="mb-2 mt-2 p-4"
         />
       </form>
 

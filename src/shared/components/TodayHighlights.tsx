@@ -14,7 +14,7 @@ export const TodayHighlights = ({ className }: TodayProps) => {
   const style = "sm:w-[150px] sm:h-[100px]  md:w-[250px] md:h-[130px]";
   return (
     <div className={className}>
-      <h1 className=" text-center ml-2 m-4 sm:text-medium  md:text-2xl">
+      <h1 className=" text-center ml-2 m-4 sm:text-medium text-texto  md:text-2xl">
         Today's Highlights
       </h1>
       <div className="flex flex-wrap">

@@ -9,6 +9,7 @@ export const WeeklyResult = () => {
     <div className=" mt-2">
       <h1
         className="text-center
+        text-texto
         ml-2
         m-4
         sm:text-medium
